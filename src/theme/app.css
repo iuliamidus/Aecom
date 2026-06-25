@@ -289,6 +289,37 @@ body.aecom { background: var(--app-bg); }
    .aecom a green link color (higher specificity than .aecom-btn--*) */
 .aecom a.aecom-btn--primary, .aecom a.aecom-btn--teal { color: #fff; }
 
+/* ---------- Live NWS weather feed banner ---------- */
+.wx-banner { background: #fff; border: 1px solid var(--app-line); border-left: 4px solid var(--aecom-teal); border-radius: var(--aecom-radius); box-shadow: var(--aecom-shadow); margin-bottom: 1.25rem; overflow: hidden; }
+.wx-banner__main { display: flex; align-items: center; gap: 1rem; padding: .75rem 1.1rem; cursor: pointer; }
+.wx-status { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--aecom-font-display); font-weight: 800; font-size: .68rem; letter-spacing: .1em; color: var(--aecom-teal); white-space: nowrap; }
+.wx-status__dot { width: 9px; height: 9px; border-radius: 50%; animation: pulse-dot 1.6s infinite; }
+.wx-banner__text { flex: 1; min-width: 0; }
+.wx-banner__title { font-weight: 700; font-size: .9rem; color: var(--aecom-ink); display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; }
+.wx-source { font-family: var(--aecom-font-display); font-size: .64rem; letter-spacing: .06em; text-transform: lowercase; color: var(--aecom-gray); background: var(--app-bg); border: 1px solid var(--app-line); padding: .1rem .4rem; border-radius: 4px; }
+.wx-banner__sub { font-size: .8rem; color: var(--aecom-gray); margin-top: .15rem; }
+.wx-banner__meta { display: flex; flex-direction: column; align-items: flex-end; gap: .2rem; white-space: nowrap; }
+.wx-updated { font-size: .72rem; color: var(--aecom-gray); font-variant-numeric: tabular-nums; }
+.wx-toggle { font-size: .74rem; font-weight: 700; color: var(--aecom-teal); }
+.wx-list { border-top: 1px solid var(--app-line); padding: .4rem .4rem; display: flex; flex-direction: column; }
+.wx-row { display: flex; gap: .7rem; align-items: flex-start; padding: .55rem .7rem; border-bottom: 1px solid var(--app-line); }
+.wx-row:last-child { border-bottom: none; }
+.wx-row__body { font-size: .84rem; }
+.wx-row__head { font-size: .76rem; color: var(--aecom-gray); margin-top: .15rem; }
+
+/* ---------- Cross-domain cascade graph ---------- */
+.cg-scroll { overflow: auto; max-height: 640px; padding: .25rem; }
+.cg-svg { display: block; }
+.cg-tier { font-family: var(--aecom-font-display); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; fill: var(--aecom-gray); }
+.cg-edge { fill: none; stroke: var(--app-line); stroke-width: 1.5; transition: stroke 200ms var(--aecom-ease), stroke-width 200ms var(--aecom-ease); }
+.cg-edge.is-active { stroke: var(--risk-high); stroke-width: 2.4; }
+.cg-node { cursor: pointer; transition: opacity 200ms var(--aecom-ease); }
+.cg-node.is-dim { opacity: .28; }
+.cg-node__rect { transition: filter 160ms var(--aecom-ease); }
+.cg-node:hover .cg-node__rect { filter: brightness(1.08); }
+.cg-node.is-selected .cg-node__rect { stroke: var(--aecom-ink); stroke-width: 2.5; }
+.cg-node__label { fill: #fff; font-size: .72rem; font-weight: 600; pointer-events: none; }
+
 /* utilities */
 .muted { color: var(--aecom-gray); }
 .row { display: flex; align-items: center; gap: .6rem; }

@@ -25,8 +25,9 @@ npm run dev      # http://localhost:5173
 | Route | What it shows |
 |-------|---------------|
 | `/` | Marketing-grade landing / context |
-| `/dashboard` | EOC risk view — interactive map, filters, **live priority queue**, asset detail with explainability + dependency cascade |
+| `/dashboard` | EOC risk view — interactive map, filters, **live priority queue**, asset detail with explainability + dependency cascade. Tops out with a **live NWS weather-alert feed** (real `api.weather.gov` data, cached last-good with staleness) |
 | `/forecasting` | Customers-affected & restoration time-series with confidence bands |
+| `/dependencies` | **Cross-domain cascade graph** (F6 differentiator) — interactive grid→water dependency network; click an asset to trace downstream impact and customers exposed |
 | `/aerial` | Aerial / computer-vision damage detection (Phase-2 preview) |
 | `/deployment` | Human-approvable crew plan (Approve / Reject), routing-fallback toggle, audit log |
 | `/copilot` | NL queries over live state that cite assets & scores (also a floating panel everywhere) |

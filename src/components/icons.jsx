@@ -16,5 +16,6 @@ export const IconClose = (p) => (<svg {...S} {...p}><line x1="18" y1="6" x2="6" 
 export const IconShield = (p) => (<svg {...S} {...p}><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/></svg>)
 export const IconArrowRight = (p) => (<svg {...S} {...p}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>)
 export const IconList = (p) => (<svg {...S} {...p}><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>)
+export const IconNetwork = (p) => (<svg {...S} {...p}><circle cx="5" cy="6" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="12" r="2.4"/><path d="M7.2 7l9.6 4M7.2 17l9.6-4"/></svg>)
 
 export const ASSET_ICON = { bolt: IconBolt, tower: IconGrid, droplet: IconDroplet, pump: IconDroplet }

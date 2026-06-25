@@ -7,6 +7,7 @@ import { SCENARIO } from '../data/scenario.js'
 import { formatInt } from '../lib/util.js'
 import { PageHead } from '../components/AppShell.jsx'
 import { AssetMap } from '../components/AssetMap.jsx'
+import { WeatherAlertsBanner } from '../components/WeatherAlertsBanner.jsx'
 import { AssetDetail } from '../components/AssetDetail.jsx'
 import { CriticalPriorities } from '../components/CriticalPriorities.jsx'
 import { RiskBadge, ConfidenceMeter } from '../components/RiskBadge.jsx'
@@ -54,6 +55,8 @@ export function Dashboard() {
         Single 48-hour-ahead risk view across grid &amp; water. Ranked, explainable and
         live as the forecast evolves — assets re-prioritise automatically.
       </PageHead>
+
+      <WeatherAlertsBanner area="SC" areaLabel="South Carolina" />
 
       <div className="kpi-strip">
         <div className="kpi">

@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import { useScenario } from '../lib/ScenarioContext.jsx'
-import { IconGrid, IconMap, IconChart, IconEye, IconTruck, IconBot } from './icons.jsx'
+import { IconGrid, IconMap, IconChart, IconEye, IconTruck, IconBot, IconNetwork } from './icons.jsx'
 
 const LINKS = [
   { to: '/dashboard', label: 'EOC Dashboard', Icon: IconMap },
   { to: '/forecasting', label: 'Forecasting', Icon: IconChart },
+  { to: '/dependencies', label: 'Dependencies', Icon: IconNetwork },
   { to: '/aerial', label: 'Aerial / CV', Icon: IconEye },
   { to: '/deployment', label: 'Deployment', Icon: IconTruck },
   { to: '/copilot', label: 'Copilot', Icon: IconBot },
