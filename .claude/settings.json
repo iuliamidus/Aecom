@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp .claude/skills/aecom-ui-design/assets/aecom-theme.css src/theme/aecom-theme.css)",
+      "Bash(cp .claude/skills/aecom-ui-design/assets/aecom-reveal.js src/lib/aecom-reveal.js)",
+      "Bash(cp .claude/skills/aecom-ui-design/assets/skyline_footer_teal.svg src/assets/)",
+      "Bash(cp .claude/skills/aecom-ui-design/assets/skyline_hero_faint.svg src/assets/)",
+      "Bash(cp .claude/skills/aecom-ui-design/assets/skyline_footer_teal.png public/img/)",
+      "Bash(npm install *)",
+      "Bash(node check.mjs)"
+    ]
+  }
+}

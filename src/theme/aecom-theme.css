@@ -1,0 +1,204 @@
+/* ============================================================
+   AECOM UI theme — drop-in design tokens + base + components.
+   Minimal, infrastructure-led: deep teal anchor, one green accent,
+   white space, a building-skyline signature, restrained motion.
+   Link this file, then use the .aecom-* classes / CSS variables.
+   ============================================================ */
+
+:root {
+  /* --- palette (AECOM identity) --- */
+  --aecom-teal:    #044955;  /* primary dark — headers, nav, dark sections */
+  --aecom-teal-700:#0E5C68;  /* lighter teal — hover, faint backdrops */
+  --aecom-green:   #00A651;  /* THE accent — one CTA / one highlight per view */
+  --aecom-green-600:#009149; /* green hover */
+  --aecom-turq:    #0E8F8C;  /* turquoise bridge tone, sparingly */
+  --aecom-ink:     #1A1A1A;  /* body text */
+  --aecom-gray:    #8C8279;  /* warm gray — captions, muted labels */
+  --aecom-line:    #E4E7E7;  /* hairline borders */
+  --aecom-panel:   #F4F6F6;  /* off-white card / section fill */
+  --aecom-white:   #FFFFFF;
+
+  /* --- typography --- */
+  /* Authentic feel: load a geometric display (e.g. Archivo/Futura) + neutral body
+     (e.g. Inter) via your <head>. These stacks fall back cleanly with zero deps. */
+  --aecom-font-display: "Archivo", "Futura", "Century Gothic", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --aecom-font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --aecom-step--1: clamp(0.78rem, 0.75rem + 0.2vw, 0.86rem);
+  --aecom-step-0:  clamp(1rem, 0.96rem + 0.25vw, 1.125rem);
+  --aecom-step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --aecom-step-2:  clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+  --aecom-step-3:  clamp(2.2rem, 1.6rem + 2.6vw, 3.5rem);
+  --aecom-step-4:  clamp(3rem, 2rem + 4.5vw, 5.25rem);
+
+  /* --- spacing / shape / depth --- */
+  --aecom-gap: 1.5rem;
+  --aecom-pad-section: clamp(3rem, 6vw, 6rem);
+  --aecom-radius: 10px;
+  --aecom-radius-sm: 6px;
+  --aecom-shadow: 0 6px 24px rgba(4, 73, 85, 0.08);
+  --aecom-shadow-lg: 0 14px 40px rgba(4, 73, 85, 0.12);
+  --aecom-maxw: 1200px;
+
+  /* --- motion (restrained) --- */
+  --aecom-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --aecom-dur: 480ms;
+}
+
+/* --- base --- */
+.aecom {
+  font-family: var(--aecom-font-body);
+  color: var(--aecom-ink);
+  font-size: var(--aecom-step-0);
+  line-height: 1.6;
+  background: var(--aecom-white);
+  -webkit-font-smoothing: antialiased;
+}
+.aecom h1, .aecom h2, .aecom h3 {
+  font-family: var(--aecom-font-display);
+  color: var(--aecom-teal);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin: 0 0 0.5em;
+}
+.aecom h1 { font-size: var(--aecom-step-4); }
+.aecom h2 { font-size: var(--aecom-step-3); }
+.aecom h3 { font-size: var(--aecom-step-1); }
+.aecom p  { margin: 0 0 1em; max-width: 64ch; }
+.aecom a  { color: var(--aecom-green-600); text-underline-offset: 3px; }
+
+.aecom-container { max-width: var(--aecom-maxw); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+.aecom-section   { padding-block: var(--aecom-pad-section); }
+.aecom-section--dark { background: var(--aecom-teal); color: var(--aecom-white); }
+.aecom-section--dark h1, .aecom-section--dark h2, .aecom-section--dark h3 { color: var(--aecom-white); }
+.aecom-section--panel { background: var(--aecom-panel); }
+
+/* --- eyebrow / kicker label (green, the signposting accent) --- */
+.aecom-eyebrow {
+  font-family: var(--aecom-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--aecom-step--1);
+  font-weight: 700;
+  color: var(--aecom-green);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.aecom-section--dark .aecom-eyebrow { color: #5FE0A8; }
+
+/* --- wordmark --- */
+.aecom-wordmark {
+  font-family: var(--aecom-font-display);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--aecom-teal);
+}
+.aecom-section--dark .aecom-wordmark,
+.aecom-nav.aecom-nav--dark .aecom-wordmark { color: var(--aecom-white); }
+
+/* --- nav / header --- */
+.aecom-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; padding-block: 1.1rem;
+}
+.aecom-nav--dark { background: var(--aecom-teal); color: var(--aecom-white); }
+.aecom-nav a { color: inherit; text-decoration: none; font-weight: 600; font-size: var(--aecom-step--1); }
+.aecom-nav nav { display: flex; gap: 1.75rem; align-items: center; }
+.aecom-nav nav a { opacity: 0.85; transition: opacity 200ms var(--aecom-ease); }
+.aecom-nav nav a:hover { opacity: 1; }
+
+/* --- buttons --- */
+.aecom-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--aecom-font-body); font-weight: 600;
+  font-size: var(--aecom-step-0);
+  padding: 0.7em 1.4em; border-radius: var(--aecom-radius-sm);
+  border: 1.5px solid transparent; cursor: pointer; text-decoration: none;
+  transition: transform 180ms var(--aecom-ease), background-color 180ms var(--aecom-ease), border-color 180ms var(--aecom-ease);
+}
+.aecom-btn:active { transform: translateY(1px); }
+/* primary = green (the one accent / main CTA) */
+.aecom-btn--primary { background: var(--aecom-green); color: #fff; }
+.aecom-btn--primary:hover { background: var(--aecom-green-600); }
+/* secondary = teal solid */
+.aecom-btn--teal { background: var(--aecom-teal); color: #fff; }
+.aecom-btn--teal:hover { background: var(--aecom-teal-700); }
+/* ghost = outline, adapts to light/dark context */
+.aecom-btn--ghost { background: transparent; border-color: currentColor; color: var(--aecom-teal); }
+.aecom-section--dark .aecom-btn--ghost, .aecom-nav--dark .aecom-btn--ghost { color: #fff; }
+.aecom-btn--ghost:hover { background: rgba(0,0,0,0.04); }
+.aecom-section--dark .aecom-btn--ghost:hover { background: rgba(255,255,255,0.08); }
+
+/* --- cards (soft tint + shadow; NEVER an edge stripe) --- */
+.aecom-card {
+  background: var(--aecom-white);
+  border: 1px solid var(--aecom-line);
+  border-radius: var(--aecom-radius);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: var(--aecom-shadow);
+  transition: transform 240ms var(--aecom-ease), box-shadow 240ms var(--aecom-ease);
+}
+.aecom-card:hover { transform: translateY(-4px); box-shadow: var(--aecom-shadow-lg); }
+.aecom-card h3 { color: var(--aecom-teal); margin-bottom: 0.4em; }
+.aecom-card .aecom-card__icon { color: var(--aecom-green); margin-bottom: 0.75rem; display: inline-flex; }
+.aecom-grid { display: grid; gap: var(--aecom-gap); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+/* --- stat callout (big green number, small muted label) --- */
+.aecom-stat__num {
+  font-family: var(--aecom-font-display); font-weight: 800;
+  font-size: var(--aecom-step-4); color: var(--aecom-green); line-height: 1;
+  letter-spacing: -0.02em;
+}
+.aecom-stat__label { color: var(--aecom-gray); font-size: var(--aecom-step--1); margin-top: 0.4rem; }
+.aecom-section--dark .aecom-stat__num { color: #5FE0A8; }
+.aecom-section--dark .aecom-stat__label { color: rgba(255,255,255,0.75); }
+
+/* --- hero with skyline signature --- */
+.aecom-hero { position: relative; background: var(--aecom-teal); color: #fff; overflow: hidden; min-height: clamp(420px, 60vh, 640px); display: flex; align-items: center; }
+.aecom-hero__inner { position: relative; z-index: 2; padding-block: clamp(4rem, 10vw, 8rem); width: 100%; }
+.aecom-hero__skyline {
+  position: absolute; inset-inline: 0; bottom: 0; z-index: 1;
+  width: 100%; height: clamp(120px, 28vw, 320px);
+  object-fit: cover; object-position: bottom; opacity: 0.22; pointer-events: none;
+}
+.aecom-hero h1 { max-width: 18ch; }
+.aecom-hero p  { max-width: 52ch; color: rgba(255,255,255,0.86); }
+
+/* --- skyline footer band (place an <img> with this class, flush to bottom) --- */
+.aecom-skyline-band { display: block; width: 100%; height: clamp(48px, 8vw, 96px); object-fit: cover; object-position: bottom; }
+
+/* --- footer --- */
+.aecom-footer { background: var(--aecom-teal); color: rgba(255,255,255,0.8); }
+.aecom-footer a { color: rgba(255,255,255,0.85); }
+
+/* ============================================================
+   Motion — minimal but present. Scroll-reveal + a hero load.
+   Pair with assets/aecom-reveal.js (adds .is-visible to [data-reveal]).
+   ============================================================ */
+[data-reveal] {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity var(--aecom-dur) var(--aecom-ease), transform var(--aecom-dur) var(--aecom-ease);
+  transition-delay: var(--aecom-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+@keyframes aecom-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.aecom-hero__inner > * { animation: aecom-rise var(--aecom-dur) var(--aecom-ease) both; }
+.aecom-hero__inner > *:nth-child(2) { animation-delay: 120ms; }
+.aecom-hero__inner > *:nth-child(3) { animation-delay: 240ms; }
+.aecom-hero__inner > *:nth-child(4) { animation-delay: 360ms; }
+
+/* quality floor: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, [data-reveal] { animation: none !important; transition: none !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* quality floor: visible keyboard focus */
+.aecom :focus-visible, .aecom-btn:focus-visible, .aecom-nav a:focus-visible {
+  outline: 3px solid var(--aecom-green); outline-offset: 2px; border-radius: 3px;
+}
